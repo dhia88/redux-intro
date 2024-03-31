@@ -9,7 +9,7 @@ export default function customerReducer(state = initialStateCustomer, action) {
     case "customer/createCustomer":
       return {
         ...state,
-        fullname: action.payload.fullName,
+        fullName: action.payload.fullName,
         nationalID: action.payload.nationalID,
         createdAt: action.payload.createdAt,
       };
@@ -23,7 +23,7 @@ export default function customerReducer(state = initialStateCustomer, action) {
   }
 }
 
-export function CreateCustomer(fullName, nationalID) {
+export function createCustomer(fullName, nationalID) {
   return {
     type: "customer/createCustomer",
     payload: { fullName, nationalID, createdAt: new Date().toISOString },
